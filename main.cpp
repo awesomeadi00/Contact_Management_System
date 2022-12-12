@@ -101,8 +101,7 @@ int main()
         else if(command == "remove" or command == "r") {
             if(root == NULL) { cout << "Contact System is empty! Cannot remove any contact!" << endl; }
             else {
-                CBST.remove(root, parameter);
-                cout << "Contact successfully removed!" << endl; }
+                CBST.remove(root, parameter); }
         }
              
         else if(command == "searchFor" or command == "s") {CBST.searchFor(root, parameter); }
