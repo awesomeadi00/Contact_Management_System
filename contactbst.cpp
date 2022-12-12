@@ -162,6 +162,9 @@ void ContactBST::remove(Node* ptr, string key) {
     }
     
     //Traversing the BST to find the key. If they key is to the left, it traverses left. If it's to the right it traverses right, if it doesn't exist, then it will print out an error.
+    if(ptr == NULL) {
+        cout << "Cannot remove! Contact does not exist in the System!" << endl;   
+    }
     
     else if(key < ptr->key) {
         remove(ptr->left, key);
@@ -184,11 +187,13 @@ void ContactBST::remove(Node* ptr, string key) {
                 cin >> contact;
             }
             ptr->contactVector.erase(contact-1);
+            cout << "Contact successfully removed!" << endl;
         }
         
         //Case B: Removing an element in the contactVector which has only one element -> erase the element and delete the node from BST.
         else {
             ptr->contactVector.erase(0);
+            cout << "Contact successfully removed!" << endl;
                 
             //Case 1: If the node is an external node.
             if(ptr->left == NULL and ptr->right == NULL) { //External nodes have no children
